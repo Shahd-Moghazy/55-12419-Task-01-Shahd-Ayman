@@ -1,10 +1,10 @@
-package services;
+package s55_12419.t_28.shahd_ayman.services;
 
-import models.Note;
+import s55_12419.t_28.shahd_ayman.models.Note;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import repositories.NoteRepository;
+import s55_12419.t_28.shahd_ayman.repositories.NoteRepository;
 
 import java.util.List;
 

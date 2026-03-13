@@ -1,10 +1,9 @@
-package controllers;
+package s55_12419.t_28.shahd_ayman.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-import models.Note;
-import services.NoteService;
+import s55_12419.t_28.shahd_ayman.models.Note;
+import s55_12419.t_28.shahd_ayman.services.NoteService;
 
 import java.util.List;
 

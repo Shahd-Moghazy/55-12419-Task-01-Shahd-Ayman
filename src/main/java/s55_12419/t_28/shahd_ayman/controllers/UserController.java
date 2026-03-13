@@ -1,14 +1,13 @@
-package controllers;
+package s55_12419.t_28.shahd_ayman.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-import models.User;
-import services.UserService;
+import s55_12419.t_28.shahd_ayman.models.User;
+import s55_12419.t_28.shahd_ayman.services.UserService;
 
 import java.util.List;
-import models.Note;
-import services.NoteService;
+import s55_12419.t_28.shahd_ayman.models.Note;
+import s55_12419.t_28.shahd_ayman.services.NoteService;
 
 @RestController
 @RequestMapping("/users")   // All endpoints start with /users

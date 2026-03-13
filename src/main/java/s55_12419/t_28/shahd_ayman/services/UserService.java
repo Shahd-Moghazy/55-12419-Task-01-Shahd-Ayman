@@ -1,10 +1,10 @@
-package services;
+package s55_12419.t_28.shahd_ayman.services;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import models.User;
-import repositories.UserRepository;
+import s55_12419.t_28.shahd_ayman.models.User;
+import s55_12419.t_28.shahd_ayman.repositories.UserRepository;
 
 import java.util.List;
 

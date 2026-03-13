@@ -1,8 +1,8 @@
-package repositories;
+package s55_12419.t_28.shahd_ayman.repositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
-import models.Note;
+import s55_12419.t_28.shahd_ayman.models.Note;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
