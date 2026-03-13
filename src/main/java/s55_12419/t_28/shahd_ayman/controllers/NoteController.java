@@ -42,9 +42,10 @@ public class NoteController {
 
     // 4. GET /notes/search?title=... — returns notes whose title contains the query (case-insensitive)
     @GetMapping("/search")
-    public List<Note> searchByTitle(@RequestParam("title") String title) {
-        return noteService.getNotesByTitle(title);
+    public Note searchByTitle(@RequestParam("title") String title) {
+        return noteService.getNotesByTitle(title).get(0);
     }
+    
     // 5. PUT /notes/{id} — accepts note body to update and returns modified note
     @PutMapping("/{id}")
     public Note updateNote(@PathVariable String id, @RequestBody Note note) {
