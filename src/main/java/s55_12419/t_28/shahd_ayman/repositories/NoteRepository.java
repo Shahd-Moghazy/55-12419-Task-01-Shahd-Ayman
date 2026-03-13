@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Repository
 public class NoteRepository {
@@ -89,11 +90,10 @@ public class NoteRepository {
                 .toList();
     }
 
-    // Find all notes for a specific title
     public List<Note> findByTitle(String title) {
         return notes.stream()
-                .filter(note -> note.getTitle().equals(title))
-                .toList();
+                .filter(n -> n.getTitle().toLowerCase().contains(title.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     // 4. Save new note + write to file

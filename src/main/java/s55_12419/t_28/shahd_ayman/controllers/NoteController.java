@@ -1,6 +1,7 @@
 package s55_12419.t_28.shahd_ayman.controllers;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import s55_12419.t_28.shahd_ayman.models.Note;
 import s55_12419.t_28.shahd_ayman.services.NoteService;
@@ -32,7 +33,7 @@ public class NoteController {
 
     // 3. POST /notes — accepts JSON body (including userId) and returns created note
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)  // 201 Created — good
+//    @ResponseStatus(HttpStatus.CREATED)  // 201 Created — good
     public Note createNote(@RequestBody Note note) {
         // note.id should be null/empty from client → repository generates it
         // note.userId must be provided in JSON body
@@ -44,7 +45,6 @@ public class NoteController {
     public List<Note> searchByTitle(@RequestParam("title") String title) {
         return noteService.getNotesByTitle(title);
     }
-
     // 5. PUT /notes/{id} — accepts note body to update and returns modified note
     @PutMapping("/{id}")
     public Note updateNote(@PathVariable String id, @RequestBody Note note) {
@@ -53,8 +53,10 @@ public class NoteController {
 
     // 6. DELETE /notes/{id} — removes the note and returns nothing (204 No Content)
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteNote(@PathVariable String id) {
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Void> deleteNote(@PathVariable String id) {
+
         noteService.deleteNote(id);
+        return ResponseEntity.ok().build();
     }
 }

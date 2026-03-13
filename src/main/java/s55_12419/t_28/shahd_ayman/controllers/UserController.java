@@ -1,6 +1,7 @@
 package s55_12419.t_28.shahd_ayman.controllers;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import s55_12419.t_28.shahd_ayman.models.User;
 import s55_12419.t_28.shahd_ayman.services.UserService;
@@ -36,7 +37,7 @@ public class UserController {
 
     // 3. POST /users → create user (body without id)
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)   // 201 Created
+//    @ResponseStatus(HttpStatus.CREATED)   // 201 Created
     public User createUser(@RequestBody User user) {
         // Note: user.id should be null/empty from client → repository generates it
         return userService.createUser(user);
@@ -49,10 +50,11 @@ public class UserController {
     }
 
     // 5. DELETE /users/{id} → delete (returns 204 No Content by default)
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(@PathVariable String id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
+        return ResponseEntity.ok().build();
     }
 
     // 6. GET /users/search?username=... → search by username (case-insensitive)
