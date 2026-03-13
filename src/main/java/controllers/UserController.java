@@ -62,7 +62,7 @@ public class UserController {
         return userService.getUserByUsername(username);  // ← you'll add this to service next
         // If not found → service throws 404 automatically
     }
-    
+
     // 7. GET /users/{id}/notes → get notes belonging to a user
     @GetMapping("/{id}/notes")
     public List<Note> getUserNotes(@PathVariable String id) {
