@@ -7,16 +7,20 @@ import models.User;
 import services.UserService;
 
 import java.util.List;
+import models.Note;
+import services.NoteService;
 
 @RestController
 @RequestMapping("/users")   // All endpoints start with /users
 public class UserController {
 
     private final UserService userService;
+    private final NoteService noteService;
 
     // Constructor injection (best practice)
-    public UserController(UserService userService) {
+    public UserController(UserService userService, NoteService noteService) {
         this.userService = userService;
+        this.noteService = noteService;
     }
 
     // 1. GET /users → all users
@@ -57,5 +61,11 @@ public class UserController {
     public User searchByUsername(@RequestParam("username") String username) {
         return userService.getUserByUsername(username);  // ← you'll add this to service next
         // If not found → service throws 404 automatically
+    }
+    
+    // 7. GET /users/{id}/notes → get notes belonging to a user
+    @GetMapping("/{id}/notes")
+    public List<Note> getUserNotes(@PathVariable String id) {
+        return noteService.getNotesByUserId(id);
     }
 }
