@@ -1,0 +1,72 @@
+[
+    {
+        "id": "a1b2c3d4-e5f6-7890-abcd-1234567890aa",
+        "title": "Welcome Note",
+        "content": "Welcome to the platform, Alice!",
+        "userId": "b1a2c3d4-e5f6-7890-abcd-1234567890ab",
+        "createdAt": "2024-03-04T11:00:00"
+    },
+    {
+        "id": "b2c3d4e5-f6a7-8901-bcda-2345678901bb",
+        "title": "First Steps",
+        "content": "Bob, here are your first steps on the app.",
+        "userId": "c2b3a4d5-e6f7-8901-bcda-2345678901bc",
+        "createdAt": "2024-03-05T12:00:00"
+    },
+    {
+        "id": "c3d4e5f6-a7b8-9012-cdab-3456789012cc",
+        "title": "Getting Started",
+        "content": "Charlie, don't forget to check your profile settings.",
+        "userId": "d3c4b5a6-f7e8-9012-cdab-3456789012cd",
+        "createdAt": "2024-03-06T13:00:00"
+    },
+    {
+        "id": "d4e5f6a7-b8c9-0123-dabc-4567890123dd",
+        "title": "Tips & Tricks",
+        "content": "Diana, here are some tips to get the most out of the app.",
+        "userId": "e4d5c6b7-a8f9-0123-dabc-4567890123de",
+        "createdAt": "2024-03-07T14:00:00"
+    },
+    {
+        "id": "e5f6a7b8-c9d0-1234-ecda-5678901234ee",
+        "title": "Your Dashboard",
+        "content": "Edward, your dashboard is ready to use!",
+        "userId": "f5e6d7c8-b9a0-1234-ecda-5678901234ef",
+        "createdAt": "2024-03-08T15:00:00"
+    },
+    {
+        "id": "f6a7b8c9-d0e1-2345-abcd-6789012345ff",
+        "title": "Alice's Second Note",
+        "content": "Alice, here is another note for you.",
+        "userId": "b1a2c3d4-e5f6-7890-abcd-1234567890ab",
+        "createdAt": "2024-03-09T16:00:00"
+    },
+    {
+        "id": "a7b8c9d0-e1f2-3456-bcda-7890123456aa",
+        "title": "Bob's Reminder",
+        "content": "Bob, remember to update your password.",
+        "userId": "c2b3a4d5-e6f7-8901-bcda-2345678901bc",
+        "createdAt": "2024-03-10T17:00:00"
+    },
+    {
+        "id": "b8c9d0e1-f2a3-4567-cdab-8901234567bb",
+        "title": "Charlie's Checklist",
+        "content": "Charlie, complete your onboarding checklist.",
+        "userId": "d3c4b5a6-f7e8-9012-cdab-3456789012cd",
+        "createdAt": "2024-03-11T18:00:00"
+    },
+    {
+        "id": "c9d0e1f2-a3b4-5678-dabc-9012345678cc",
+        "title": "Diana's Update",
+        "content": "Diana, your profile was updated successfully.",
+        "userId": "e4d5c6b7-a8f9-0123-dabc-4567890123de",
+        "createdAt": "2024-03-12T19:00:00"
+    },
+    {
+        "id": "d0e1f2a3-b4c5-6789-ecda-0123456789dd",
+        "title": "Edward's Alert",
+        "content": "Edward, you have a new message.",
+        "userId": "f5e6d7c8-b9a0-1234-ecda-5678901234ef",
+        "createdAt": "2024-03-13T20:00:00"
+    }
+]

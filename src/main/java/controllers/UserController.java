@@ -1,0 +1,61 @@
+package controllers;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+import models.User;
+import services.UserService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/users")   // All endpoints start with /users
+public class UserController {
+
+    private final UserService userService;
+
+    // Constructor injection (best practice)
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    // 1. GET /users → all users
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    // 2. GET /users/{id} → single user
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable String id) {
+        return userService.getUserById(id);
+    }
+
+    // 3. POST /users → create user (body without id)
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)   // 201 Created
+    public User createUser(@RequestBody User user) {
+        // Note: user.id should be null/empty from client → repository generates it
+        return userService.createUser(user);
+    }
+
+    // 4. PUT /users/{id} → update user
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable String id, @RequestBody User user) {
+        return userService.updateUser(id, user);
+    }
+
+    // 5. DELETE /users/{id} → delete (returns 204 No Content by default)
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteUser(@PathVariable String id) {
+        userService.deleteUser(id);
+    }
+
+    // 6. GET /users/search?username=... → search by username (case-insensitive)
+    @GetMapping("/search")
+    public User searchByUsername(@RequestParam("username") String username) {
+        return userService.getUserByUsername(username);  // ← you'll add this to service next
+        // If not found → service throws 404 automatically
+    }
+}
